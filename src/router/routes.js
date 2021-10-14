@@ -4,8 +4,9 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Formulario.vue') },
-      { path: 'justificativa', component: () => import('pages/Justificativa.vue') }
+      { path: '', component: () => import('pages/Index.vue') },
+      { path: 'justificativa', component: () => import('pages/Justificativa.vue') },
+      { path: 'formulario', component: () => import('pages/Formulario.vue') }
     ]
   },
 

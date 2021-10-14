@@ -5,7 +5,7 @@
         Adicionar nova justificativa
       </div>
       <div class="q-pt-xl" style="font-size: 18px; color: #474747">
-          Justificativa
+        Justificativa
       </div>
       <q-form
         @submit.prevent="salvarJustificativa"

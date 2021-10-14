@@ -37,7 +37,7 @@
             <q-radio v-model="descadastramento.id" val="0" label="Outro:" />
             <div class="q-pl-md">
               <q-input
-                v-if="id==0"
+                v-if="descadastramento.id==0"
                 class="q-pt-xs"
                 v-model="descadastramento.texto"
                 bottom-slots

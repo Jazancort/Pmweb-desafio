@@ -15,6 +15,7 @@ export default {
     }
   },
   mounted () {
+    // Pegar items cadastrados do localStorage
     const item = localStorage.getItem(this.key)
     this.justificativas = JSON.parse(item)
   },
@@ -33,7 +34,6 @@ export default {
       }
     },
     onReset () {
-      this.id = null
       this.descadastramento = null
     }
   }

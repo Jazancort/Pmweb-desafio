@@ -18,6 +18,7 @@
       content-class="bg-custom-blue-dark"
       :breakpoint="400"
       elevated
+      behavior="mobile"
     >
     <q-scroll-area class="bg-black" style="height: calc(100% - 150px); margin-top: 150px;">
       <q-list class="text-white" >

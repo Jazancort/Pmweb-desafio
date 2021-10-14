@@ -1,1 +1,23 @@
 /* app global css */
+/* Justificativa */
+.center {
+  margin: auto;
+  width: 85%;
+  padding: 200px 0;
+}
+
+/* Formulário */
+.center-form {
+  margin: auto;
+  width: 75%;
+  padding: 25px 0;
+}
+.descricao {
+  text-align: justify;
+  line-height: 1.8;
+  font-size: 18px;
+  color: #474747;
+}
+p {
+  text-decoration: underline;
+}

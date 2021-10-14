@@ -3,7 +3,7 @@
     <div class="center row">
 
       <!-- Lado esquerdo da tela -->
-      <div class="col">
+      <div class="col q-pr-md">
         <div class="text-weight-medium" style="font-size: 34px; color: #474747">
           Nós sentiremos sua falta
           <img class="q-pt-xs q-pr-xl" style="height: 50px" src="NovoProjeto1.png">
@@ -20,7 +20,7 @@
       </div>
 
       <!-- Lado Direito da tela: -->
-      <div class="col">
+      <div class="col q-pl-xl">
         <div class="text-weight-medium" style="font-size: 34px; color: #474747">
           Por que você quer se descadastrar?
         </div>
@@ -110,14 +110,13 @@ export default {
 .center {
   margin: auto;
   width: 75%;
-  padding: 70px 0;
+  padding: 25px 0;
 }
 .descricao {
   text-align: justify;
   line-height: 1.8;
   font-size: 18px;
   color: #474747;
-  width: 575px;
 }
 p {
   text-decoration: underline;

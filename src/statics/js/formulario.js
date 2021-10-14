@@ -26,15 +26,16 @@ export default {
         this.success('Descadastramento realizado com sucesso.')
         const novoDescadastramento = JSON.stringify([this.descadastramento])
         localStorage.setItem(this.keyDescadastramento, novoDescadastramento)
-        this.success('Justificativa salva com sucesso')
       } else if (this.id === 0 && this.descadastramento === null) {
         this.error('Por favor, adicione uma justificativa')
       } else {
         this.error('Por favor, selecione uma das opções acima para poder realizar o descadastramento.')
       }
+      document.getElementById('reset').click()
     },
     onReset () {
-      this.descadastramento = null
+      this.descadastramento.texto = null
+      this.descadastramento.id = null
     }
   }
 }

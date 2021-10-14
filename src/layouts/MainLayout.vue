@@ -1,21 +1,26 @@
 <template>
-<q-layout view="lHh Lpr lFf">
-    <q-header elevated class="bg-black">
+<q-layout class="shadow-2 rounded-borders" view="lHh Lpr lFf">
+  <!-- Header da aplicação -->
+    <q-header bordered  class="bg-black">
       <q-toolbar>
         <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
-        <q-toolbar-title class="text-center">
+        <q-toolbar-title class="text-center q-pl-xl q-ml-xl">
           <a href="https://www.linkedin.com/in/jazancort/" >
             <img class="q-pt-xs q-pr-xl" style="height: 50px" src="Jazancort-logos_white-recortado.png">
           </a>
         </q-toolbar-title>
-
-        <!-- <q-btn type="a" href="https://github.com/Jazancort" target="https://github.com/Jazancort" flat round dense icon="fab fa-github" />
-        <q-btn class="q-pl-md" type="a" href="https://www.linkedin.com/in/jazancort/" target="https://www.linkedin.com/in/jazancort/" flat round dense icon="fab fa-linkedin" /> -->
+        <div class="q-pr-sm" v-for="item in menuList" :key="item">
+          <q-btn flat dense :icon="item.icon" :to="item.router" />
+          <q-tooltip class="bg-black" transition-show="scale" transition-hide="scale">
+            {{item.label}}
+          </q-tooltip>
+        </div>
       </q-toolbar>
     </q-header>
+
+    <!-- Menu lateral -->
     <q-drawer
       v-model="drawer"
-      content-class="bg-custom-blue-dark"
       :breakpoint="400"
       elevated
       behavior="mobile"
@@ -30,6 +35,16 @@
             </q-item-section>
             <q-item-section>
               <q-item-label class="text-weight-bold shadow-24">{{item.label}}</q-item-label>
+            </q-item-section>
+          </q-item>
+        </div>
+        <div>
+          <q-item clickable @click="clear" exact active-class="text-purple-4">
+            <q-item-section avatar>
+              <q-icon name="fas fa-trash-alt" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label class="text-weight-bold shadow-24">Limpar localStorage</q-item-label>
             </q-item-section>
           </q-item>
         </div>
@@ -79,6 +94,12 @@ export default {
     return {
       drawer: false,
       menuList
+    }
+  },
+  methods: {
+    clear () {
+      window.localStorage.clear()
+      location.reload()
     }
   }
 }

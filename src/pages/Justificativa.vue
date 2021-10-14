@@ -8,7 +8,7 @@
           Justificativa
       </div>
       <q-form
-        @submit="salvarJustificativa"
+        @submit.prevent="salvarJustificativa"
         @reset="onReset"
         class="q-gutter-md"
       >
@@ -22,7 +22,8 @@
           dense
           clearable
           clear-icon="close"
-          :rules="[val => !!val || 'Por favor, digite uma justificativa']"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Por favor, digite uma justificativa']"
         />
         <q-checkbox
           v-model="justificativa.checkbox"
@@ -40,6 +41,7 @@
             no-caps
             rounded
           />
+          <q-btn id="reset" type="reset" color="primary" flat class="q-ml-sm" style="display: none;" />
         </div>
       </q-form>
     </div>
@@ -84,15 +86,12 @@ export default {
           this.success('Justificativa salva com sucesso')
           this.justificativa.id++
         }
+        document.getElementById('reset').click()
       }
     },
     onReset () {
-      this.justificativa = null
-    },
-    myRule (val) {
-      if (val == null) {
-        return val || 'Por favor, selecione uma das duas opções.'
-      }
+      this.justificativa.texto = null
+      this.justificativa.checkbox = null
     }
   }
 }

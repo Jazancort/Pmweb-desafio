@@ -3,7 +3,7 @@
     <div class="center row">
 
       <!-- Lado esquerdo da tela -->
-      <div class="col q-pr-md">
+      <div class="col col-md-6">
         <div class="text-weight-medium" style="font-size: 34px; color: #474747">
           Nós sentiremos sua falta
           <img class="q-pt-xs q-pr-xl" style="height: 50px" src="NovoProjeto1.png">
@@ -15,7 +15,7 @@
           que o levaram a tomar essa decisão.
         </div>
         <div class="text-weight-medium q-pt-xl" style="font-size: 18px; color: #474747">
-          O questionário é opicional.
+          O questionário é opcional.
         </div>
       </div>
 

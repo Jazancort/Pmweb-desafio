@@ -1,3 +1,4 @@
+import notificacao from 'src/boot/notify.js'
 const menuList = [
   {
     icon: 'fas fa-user',
@@ -12,6 +13,9 @@ const menuList = [
 ]
 export default {
   name: 'MainLayout',
+  mixins: [
+    notificacao
+  ],
   data () {
     return {
       drawer: false,
@@ -34,8 +38,13 @@ export default {
         persistent: true
       }).onOk(() => {
         window.localStorage.clear()
-        this.$router.push('/formulario')
         this.drawer = false
+        console.log(document.URL.includes('formulario'))
+        if (document.URL.includes('formulario')) {
+          location.reload()
+        } else {
+          this.$router.push('/formulario')
+        }
       }).onCancel(() => {
         // console.log('>>>> Cancel')
       }).onDismiss(() => {

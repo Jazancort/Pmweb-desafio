@@ -7,6 +7,8 @@
       <div class="q-pt-xl" style="font-size: 18px; color: #474747">
         Justificativa
       </div>
+
+      <!-- Formulário -->
       <q-form
         @submit.prevent="salvarJustificativa"
         @reset="onReset"

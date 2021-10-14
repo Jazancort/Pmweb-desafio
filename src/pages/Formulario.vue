@@ -49,10 +49,12 @@
               </div>
             </div>
           </div>
+
           <div class="text-weight-medium" style="font-size: 15px; color: #474747">
             O descadastramento será efetuado para o e-mail:<br>
             <p class="text-blue">nome.sobrenome@pmweb.com.br</p>
           </div>
+
           <div class="q-pt-sm">
             <q-btn
               :disable="descadastramento.id == null"

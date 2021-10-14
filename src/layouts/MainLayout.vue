@@ -26,7 +26,7 @@
               </q-item>
             </div>
             <div>
-              <q-item clickable @click="customBtn" exact active-class="text-purple-4">
+              <q-item clickable @click="clear" exact active-class="text-purple-4">
                 <q-item-section avatar>
                   <q-icon name="fas fa-trash-alt" />
                 </q-item-section>
@@ -62,7 +62,7 @@
             </q-item>
           </div>
           <div>
-            <q-item clickable @click="customBtn" exact active-class="text-purple-4">
+            <q-item clickable @click="clear" exact active-class="text-purple-4">
               <q-item-section avatar>
                 <q-icon name="fas fa-trash-alt" />
               </q-item-section>

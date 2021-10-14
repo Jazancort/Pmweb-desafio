@@ -23,7 +23,7 @@ export default {
     }
   },
   methods: {
-    customBtn () {
+    clear () {
       this.$q.dialog({
         title: 'Limpar localStorage',
         message: 'Você tem certeza que deseja limpar todos os dados do localStorage?',
@@ -39,7 +39,6 @@ export default {
       }).onOk(() => {
         window.localStorage.clear()
         this.drawer = false
-        console.log(document.URL.includes('formulario'))
         if (document.URL.includes('formulario')) {
           location.reload()
         } else {

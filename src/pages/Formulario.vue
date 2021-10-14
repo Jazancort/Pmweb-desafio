@@ -33,6 +33,16 @@
             <!-- For para pegar todos as justificativas cadastradas -->
             <div class="q-pb-md" v-for="justificativa in justificativas" :key="justificativa">
               <q-radio v-model="descadastramento.id" :val="justificativa.id" :label="justificativa.texto" />
+              <q-input
+                v-if="justificativa.checkbox==true && justificativa.id == descadastramento.id"
+                class="q-pt-xs"
+                v-model="descadastramento.texto"
+                bottom-slots
+                counter
+                maxlength="150"
+                dense
+                :rules="[val => !!val || 'Por favor, digite uma justificativa']"
+              />
             </div>
             <q-radio v-model="descadastramento.id" val="0" label="Outro:" />
             <div class="q-pl-md">
@@ -54,6 +64,7 @@
           </div>
           <div class="q-pt-sm">
             <q-btn
+              :disable="descadastramento.id == null"
               type="submit"
               style="width: 200px"
               align="center"

@@ -31,6 +31,7 @@
         />
         <div class="q-pt-xs">
           <q-btn
+            :disable="justificativa.checkbox == null || justificativa.texto == null"
             class="float-right"
             type="submit"
             style="width: 200px"
